@@ -1,9 +1,26 @@
 body {
   margin: 0;
   padding: 0;
-  /*height: 100vh;
-  width: 100vw;*/
   font-size: 22px;
+}
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.4em;
+}
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+}
+h4 {
+  font-size: 1.25em;
+  margin-bottom: 0.2em;
 }
 
 #app{
@@ -34,8 +51,6 @@ li {
 li < div < img {
   maegin-right: 10px;
 }
-
-
 hr {
   width: 100%;
 
@@ -46,4 +61,11 @@ hr {
     overflow: hidden;
     border-style: inset;
     border-width: 1px;
+}
+.modal-card-body{
+  font-size: 18px;
+}
+.license{
+  font-size: 12px;
+  color: grey;
 }

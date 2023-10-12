@@ -1,5 +1,5 @@
 {
-  "name": "better-new-tab",
+  "name": "simple-new-tab",
   "manifest_version": 3,
   "description": "New tabs with three columns of bookmarks.",
   "version": "0.1",

@@ -12,10 +12,10 @@ const settingsModal = {
       document.querySelector('.settings-modal-close').addEventListener('click', settingsModal.methods.close);
     },
     open() {
-      settingsModal.data.modalElement.style.display = 'block';
+      settingsModal.data.modalElement.classList.add('is-active');
     },
     close() {
-      settingsModal.data.modalElement.style.display = 'none';
+      settingsModal.data.modalElement.classList.remove('is-active');
     },
   }
 };
