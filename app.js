@@ -116,51 +116,55 @@ const app = {
   render() {
     const columnTemplates = app.data.columns.map((column, columnIndex) => {
       const items = column.map((item, itemIndex) => {
-        if (!item) { return; }
-        if (item.type === 'bookmark') {
-          const encodedURL = encodeURIComponent(item.url);
-          return `
-          <li data-name=${item.name} data-url=${item.url} data-type='bookmark'>
-            <div class="is-pulled-left is-flex is-align-items-center">
-              <img class='mr-1' src="${getFavicon(item.url)}"">
-              <a href="${item.url}" rel="noopener noreferrer">${item.name}</a>
-            </div>
-            <div class="is-pulled-right is-flex is-align-items-center">
-              <button
-                class="button is-info is-small mr-1 editor"
-                onclick="app.methods.openEditModal(${columnIndex}, ${itemIndex})">
-                <i class="fas fa-edit"></i>
-              </button>
-              <button
-                class="button is-danger is-small editor"
-                onclick="app.methods.removeItem(${columnIndex}, ${itemIndex})">
-                <i class="fas fa-minus"></i>
-              </button>
-            </div>
-          </li>`;
-        } else if (item.type === 'hr') {
-          return `
-          <li data-type='hr'>
-            <hr>
-            <button class="button is-danger is-small ml-2 editor"
-              onclick="app.methods.removeItem(${columnIndex}, ${itemIndex})">
-              <i class="fas fa-minus"></i>
-            </button>
-          </li>`;
-        }
+          if (!item) { return; }
+          if (item.type === 'bookmark') {
+              return `
+              <li data-name=${item.name} data-url=${item.url} data-type='bookmark'>
+                  <div class="is-pulled-left is-flex is-align-items-center">
+                      <img class='mr-1' src="${getFavicon(item.url)}">
+                      <a href="${item.url}" rel="noopener noreferrer">${item.name}</a>
+                  </div>
+                  <div class="is-pulled-right is-flex is-align-items-center">
+                      <button
+                          id="edit-button-${columnIndex}-${itemIndex}"
+                          class="button is-info is-small mr-1 editor">
+                          <i class="fas fa-edit"></i>
+                      </button>
+                      <button
+                          id="remove-button-${columnIndex}-${itemIndex}"
+                          class="button is-danger is-small editor">
+                          <i class="fas fa-minus"></i>
+                      </button>
+                  </div>
+              </li>`;
+          } else if (item.type === 'hr') {
+              return `
+              <li data-type='hr'>
+                  <hr>
+                  <button
+                      id="hr-remove-button-${columnIndex}-${itemIndex}"
+                      class="button is-danger is-small ml-2 editor">
+                      <i class="fas fa-minus"></i>
+                  </button>
+              </li>`;
+          }
       }).join('');
 
       return `
-        <div class="column">
+      <div class="column">
           <ul id="list-${columnIndex}" class="sortable">${items}</ul>
-          <button class="button is-info mb-2 editor" onclick="app.methods.openModal(${columnIndex})">
-            <i class="fas fa-plus"></i>
+          <button
+              id="add-button-${columnIndex}"
+              class="button is-info mb-2 editor">
+              <i class="fas fa-plus"></i>
           </button>
-          <button class="button is-info mb-2 editor" onclick="app.methods.addHR(${columnIndex})">
-            <i class="fas fa-minus"></i> 横線追加
+          <button
+              id="add-hr-button-${columnIndex}"
+              class="button is-info mb-2 editor">
+              <i class="fas fa-minus"></i> 横線追加
           </button>
-        </div>`;
-    }).join('');
+      </div>`;
+  }).join('');
 
     const template = `
       <div class="column has-text-right">
@@ -181,10 +185,27 @@ const app = {
 
     document.getElementById('app').innerHTML = template;
 
+    app.data.columns.forEach((column, columnIndex) => {
+        document.getElementById(`add-button-${columnIndex}`).addEventListener('click', () => app.methods.openModal(columnIndex));
+        document.getElementById(`add-hr-button-${columnIndex}`).addEventListener('click', () => app.methods.addHR(columnIndex));
+
+        column.forEach((item, itemIndex) => {
+            if (item.type === 'bookmark') {
+                document.getElementById(`edit-button-${columnIndex}-${itemIndex}`).addEventListener('click', () => app.methods.openEditModal(columnIndex, itemIndex));
+                document.getElementById(`remove-button-${columnIndex}-${itemIndex}`).addEventListener('click', () => app.methods.removeItem(columnIndex, itemIndex));
+            } else if (item.type === 'hr') {
+                document.getElementById(`hr-remove-button-${columnIndex}-${itemIndex}`).addEventListener('click', () => app.methods.removeItem(columnIndex, itemIndex));
+            }
+        });
+    });
+
     app.methods.sortable();
     app.methods.saveState();
   }
 };
+
+app.render();
+
 
 document.querySelector('.add-bookmark').addEventListener('click', app.methods.addBookmarkFromModal);
 document.querySelector('.edit-bookmark').addEventListener('click', app.methods.saveEdit);
@@ -193,8 +214,6 @@ document.querySelector('.close-edit-modal').addEventListener('click', app.method
 document.querySelector('.cancel-add').addEventListener('click', app.methods.closeModal);
 document.querySelector('.cancel-edit').addEventListener('click', app.methods.closeEditModal);
 document.querySelector('.modal .delete').addEventListener('click', app.methods.closeModal);
-
-app.render();
 
 app.methods.toggleButtons(true);
 settingsModal.methods.init('#openModal', '#settings-modal');
