@@ -186,7 +186,12 @@ const app = {
   }
 };
 
-
+document.querySelector('.add-bookmark').addEventListener('click', app.methods.addBookmarkFromModal);
+document.querySelector('.edit-bookmark').addEventListener('click', app.methods.saveEdit);
+document.querySelector('.close-modal').addEventListener('click', app.methods.closeModal);
+document.querySelector('.close-edit-modal').addEventListener('click', app.methods.closeEditModal);
+document.querySelector('.cancel-add').addEventListener('click', app.methods.closeModal);
+document.querySelector('.cancel-edit').addEventListener('click', app.methods.closeEditModal);
 document.querySelector('.modal .delete').addEventListener('click', app.methods.closeModal);
 
 app.render();

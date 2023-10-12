@@ -1,0 +1,10 @@
+{
+  "name": "better-new-tab",
+  "manifest_version": 3,
+  "description": "New tabs with three columns of bookmarks.",
+  "version": "0.1",
+  "permissions" : ["management"],
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}

@@ -16,7 +16,7 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">ブックマーク追加</p>
-        <button class="delete" aria-label="close" onclick="app.methods.closeModal()"></button>
+        <button class="delete close-modal" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div class="field">
@@ -33,8 +33,8 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success" onclick="app.methods.addBookmarkFromModal()">追加</button>
-        <button class="button" onclick="app.methods.closeModal()">キャンセル</button>
+        <button class="button is-success add-bookmark">追加</button>
+        <button class="button cancel-add">キャンセル</button>
       </footer>
     </div>
   </div>
@@ -45,7 +45,7 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">ブックマークの編集</p>
-        <button class="delete" aria-label="close" onclick="app.methods.closeEditModal()"></button>
+        <button class="delete close-edit-modal" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div class="field">
@@ -62,8 +62,8 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success" onclick="app.methods.saveEdit()">保存</button>
-        <button class="button" onclick="app.methods.closeEditModal()">キャンセル</button>
+        <button class="button is-success edit-bookmark">保存</button>
+        <button class="button cancel-edit">キャンセル</button>
       </footer>
     </div>
   </div>
@@ -97,9 +97,9 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+  <script src="Sortable.min.js"></script>
   <script src="util.js"></script>
-  <script src="modal.js"></script>
+  <script src="basic_modal.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
