@@ -2,6 +2,30 @@ body {
   margin: 0;
   padding: 0;
   font-size: 22px;
+  line-height: 1.2;
+}
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 0.4em;
+}
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.3em;
+}
+h4 {
+  font-size: 1.25em;
+  margin-bottom: 0.2em;
+}
+
+.modal {
+  font-size: 18px;
 }
 h1, h2, h3, h4 {
   font-weight: bold;
@@ -54,13 +78,13 @@ li < div < img {
 hr {
   width: 100%;
 
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    overflow: hidden;
-    border-style: inset;
-    border-width: 1px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
 }
 .modal-card-body{
   font-size: 18px;

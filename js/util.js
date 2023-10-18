@@ -1,4 +1,4 @@
-function isValidURL(string) {
+function validateURL(string) {
   try {
     new URL(string);
     return true;
@@ -8,14 +8,14 @@ function isValidURL(string) {
 }
 
 function getFavicon(str){
-  if (isValidURL(str)) {
+  if (validateURL(str)) {
     return `http://www.google.com/s2/favicons?domain=${str}`
   } else {
     return str
   }
 }
 
-function escapeHtml(str) {
+function escapedString(str) {
   return str.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
@@ -25,10 +25,10 @@ function escapeHtml(str) {
 
 function safeURL(str){
   // HTMLエスケープ
-  const htmlEscaped = escapeHtml(userInputText);
-  if (!isValidURL(htmlEscaped)) { return htmlEscaped }
+  const escaped = escapedString(str);
+  if (!validateURL(escaped)) { return escaped }
 
   // URLエンコード
-  return encodeURI(htmlEscaped);
+  return encodeURI(escaped);
 }
 

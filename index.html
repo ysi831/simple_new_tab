@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="script-src 'self';"><!-- for extension -->
-  <title>ブックマークリスト</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <title>Simple New Tab</title>
+  <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <div id="app"></div>
@@ -69,86 +69,10 @@
     </div>
   </div>
 
-  <!-- 設定用モーダル -->
-  <div id="settings-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">設定</p>
-        <button class="delete settings-modal-close" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <h2>このアプリについて</h2>
-        <p><b>Simple New Tab(シンプルニュータブ)</b>は、必要最小限のカスタマイズができる新しいタブを提供するChrome拡張です。</p>
-        <br>
-        <p>3カラムでのブックマークの登録、区切り線でのグルーピング、ドラッグドロップによる入れ替えができます。</p>
-        <p>登録後、右上の錠前のチェックを入れると余計なボタンが表示されなくなります。</p>
-        <br>
-        <p>このアプリは試験公開中であり、これから変わることも、変わらないこともありえます。</p>
-
-        <br>
-        <h2>使い方</h2>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>＋ボタン</b>
-          </div>
-          <div class="column">
-            <span>ブックマークの登録</span>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>＋区切り線追加ボタン</b>
-          </div>
-          <div class="column">
-            <span>ブックマークを区切る横線の追加</span>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>鉛筆ボタン</b>
-          </div>
-          <div class="column">
-            <span>追加したブックマークの編集</span>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>ゴミ箱ボタン</b>
-          </div>
-          <div class="column">
-            <span>追加したブックマーク・区切り線の削除</span>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>(右上)錠前チェックボックス</b>
-          </div>
-          <div class="column">
-            <span>編集・削除ボタンを非表示にする</span>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-narrow is-6">
-            <b>(右上)歯車</b>
-          </div>
-          <div class="column">
-            <span>設定</span>
-          </div>
-        </div>
-        
-      </section>
-      <footer class="modal-card-foot license">
-        <!-- Copyright © bluishtail -->
-        Copyright <a href="https://www.mpo-gg.com">© mpo-gg.com</a>
-      </footer>
-    </div>
-  </div>
-
-  <script src="Sortable.min.js"></script>
-  <script src="util.js"></script>
-  <script src="basic_modal.js"></script>
-  <script src="app.js"></script>
+  <div class="settings-modal-wrap"></div>
+  <script src="./js/Sortable.min.js"></script>
+  <script src="./js/util.js"></script>
+  <script src="./js/basic_modal.js"></script>
+  <script src="./js/app.js"></script>
 </body>
 </html>
