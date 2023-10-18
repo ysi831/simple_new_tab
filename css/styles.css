@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 h1, h2, h3, h4 {
   font-weight: bold;
@@ -92,4 +92,10 @@ hr {
 .license{
   font-size: 12px;
   color: grey;
+}
+.bullet-point::before {
+  margin-left: 4px;
+  margin-right: 4px;
+  content: "\2022";
+  font-size: 22px;
 }
