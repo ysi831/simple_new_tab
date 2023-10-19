@@ -3,7 +3,7 @@
   "manifest_version": 3,
   "description": "「新しいタブ」ページを独自のブックマークリストに置き換えるシンプルなChrome拡張です。ブックマークを3カラム型のリストで表示できます。",
   "version": "0.1",
-  "permissions" : [""],
+  "permissions" : [],
   "chrome_url_overrides" : {
     "newtab": "index.html"
   }
