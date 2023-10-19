@@ -26,8 +26,6 @@ const settingsModal = {
             <p class="bullet-point">Chromeのブックマークとは連携しないため、独自のブックマークを自分で登録して使うことができます。</p>
             <p class="bullet-point">登録後、右上の錠前のチェックを入れると余計なボタンが表示されなくなります。</p>
             <p class="bullet-point">アイコンは自動で取得されます。</p>
-            <br>
-            <p>このアプリは試験公開中であり、これから変わることも、変わらないこともありえます。</p>
 
             <br>
             <h2 id="使い方"><a class="anchor" name="使い方" href="#使い方"><span class="octicon octicon-link"></span></a>使い方</h2>
@@ -86,8 +84,6 @@ const settingsModal = {
 
             <br>
             <h2 id="その他"><a class="anchor" name="その他" href="#その他"><span class="octicon octicon-link"></span></a>その他</h2>
-            <p class="bullet-point">この拡張機能は無料ですが、課金して開発者をサポートできます。<br>
-              もしよかったら開発継続のためご協力ください。</p>
             <p class="bullet-point">ユーザーの情報を収集・閲覧することは一切ありません。</p>
 
           </section>
