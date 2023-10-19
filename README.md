@@ -21,4 +21,4 @@ Chromeの設定から、「起動時」→「新しいタブページを開く�
 もしよかったら開発継続のためご協力ください。
 - ユーザーの情報を収集・閲覧することは一切ありません。
 - Githubでソースコードを公開しています。
-  - https://github.com/bluishtail/better_new_tab
+  - https://github.com/bluishtail/simple_new_tab
