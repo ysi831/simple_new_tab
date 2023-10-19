@@ -144,7 +144,7 @@ const app = {
                 <button
                   id="remove-button-${columnIndex}-${itemIndex}"
                   class="button is-danger is-small editor">
-                  <i class="fas fa-minus"></i>
+                  <i class="fas fa-trash"></i>
                 </button>
               </div>
             </li>`;
@@ -155,7 +155,7 @@ const app = {
               <button
                 id="hr-remove-button-${columnIndex}-${itemIndex}"
                 class="button is-danger is-small ml-2 editor">
-                <i class="fas fa-minus"></i>
+                <i class="fas fa-trash"></i>
               </button>
             </li>`;
         }
@@ -172,7 +172,7 @@ const app = {
           <button
             id="add-hr-button-${columnIndex}"
             class="button is-info mb-2 editor">
-            <i class="fas fa-minus"></i> 横線追加
+            <i class="fas fa-plus mr-2 "></i> 横線追加
           </button>
         </div>`;
     }).join('');
