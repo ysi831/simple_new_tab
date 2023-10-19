@@ -1,7 +1,7 @@
 {
   "name": "ESS NEW TAB",
   "manifest_version": 3,
-  "description": "新しいタブを独自のブックマークリストに置き換えるChrome拡張です。ブックマークを3カラムのリストで表示できます。",
+  "description": "新しいタブページを独自のブックマークリストに置き換えるシンプルなChrome拡張です。ブックマークを3カラムのリストで表示できます。",
   "version": "0.1",
   "permissions" : ["management"],
   "chrome_url_overrides" : {

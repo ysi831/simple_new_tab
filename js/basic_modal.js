@@ -20,9 +20,9 @@ const settingsModal = {
           <section class="modal-card-body">
 
             <h2>このアプリについて</h2>
-            <p><b>Ess New Tab</b>は、新しいタブページを独自のブックマークリストに置き換えるシンプルなChrome拡張です。</p>
+            <p><b>ESS NEW TAB</b>は、新しいタブページを独自のブックマークリストに置き換えるシンプルなChrome拡張です。</p>
             <br>
-            <p class="bullet-point">3カラムでのブックマークの登録、区切り線でのグルーピング、ドラッグドロップによる入れ替えができます。</p>
+            <p class="bullet-point">3カラムでのブックマークの登録、区切り線の追加、ドラッグドロップによる入れ替えができます。</p>
             <p class="bullet-point">Chromeのブックマークとは連携しないため、独自のブックマークを自分で登録して使うことができます。</p>
             <p class="bullet-point">登録後、右上の錠前のチェックを入れると余計なボタンが表示されなくなります。</p>
             <p class="bullet-point">アイコンは自動で取得されます。</p>
