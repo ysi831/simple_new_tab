@@ -96,8 +96,11 @@ const app = {
       localStorage.setItem('columns', JSON.stringify(app.data.columns));
       localStorage.setItem('locked', app.data.locked);
     },
-    toggleButtons(initial=false) {
-      const isChecked = document.querySelector('#btn-toggle').checked;
+    toggleButtons(event) {
+      if (event) {
+        app.data.locked = document.querySelector('#btn-toggle').checked;
+      }
+      const isChecked = app.data.locked;
 
       const buttonsToggleModule = (() => {
         const buttons = document.querySelectorAll('.editor');
@@ -118,7 +121,7 @@ const app = {
       })();
 
       app.data.locked = isChecked;
-      if (!initial) { saveState(); }
+      if (event) { saveState(); }
     }
   },
   render() {
