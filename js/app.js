@@ -130,10 +130,10 @@ const app = {
         if (!item) { return; }
         if (item.type === 'bookmark') {
           return `
-            <li data-name=${item.name} data-url=${safeURL(item.url)} data-type='bookmark'>
+            <li data-name=${escapedHTML(item.name)} data-url=${safeURL(item.url)} data-type='bookmark'>
               <div class="is-pulled-left is-flex is-align-items-center">
                 <img class='mr-1' src="${getFavicon(item.url)}">
-                <a href="${safeURL(item.url)}" rel="noopener noreferrer">${item.name}</a>
+                <a href="${safeURL(item.url)}" rel="noopener noreferrer">${escapedHTML(item.name)}</a>
               </div>
               <div class="is-pulled-right is-flex is-align-items-center">
                 <button
