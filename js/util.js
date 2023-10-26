@@ -1,6 +1,9 @@
 function validateURL(string) {
   try {
     new URL(string);
+    if (url.protocol === 'file:') {
+      return false;
+    }
     return true;
   } catch (_) {
     return false;
