@@ -181,7 +181,7 @@ const app = {
       <div class="column">
         <div class="level">
           <div class="level-left">
-            ESS NEW TAB
+            Bookmarker Web
           </div>
           <div class="level-right">
             <input type="checkbox" id="btn-toggle" class="mr-1 switch" ${(app.data.locked) ? "checked" : ''} name="switchRoundedDefault">
