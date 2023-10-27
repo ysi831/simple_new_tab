@@ -1,6 +1,6 @@
 function validateURL(string) {
   try {
-    new URL(string);
+    const url = new URL(string);
     if (url.protocol === 'file:') {
       return false;
     }
