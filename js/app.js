@@ -47,7 +47,13 @@ const app = {
       document.querySelector('#edit-modal').classList.remove('is-active');
       app.data.currentEdit = { columnIndex: null, itemIndex: null };
     },
-
+    setDisplayName() {
+      const name = document.querySelector('#bookmarkName').value;
+      if (name) { return; }
+      const url = document.querySelector('#bookmarkUrl').value;
+      const autoName = extractSiteName(url)
+      document.querySelector('#bookmarkName').value = autoName;
+    },
     saveEdit() {
       const { columnIndex, itemIndex } = app.data.currentEdit;
       const newName = document.querySelector('#edit-name').value;
@@ -231,6 +237,9 @@ app.methods.initialize();
 app.render();
 
 document.querySelector('.add-bookmark').addEventListener('click', addBookmarkFromModal);
+
+document.querySelector('#bookmarkUrl').addEventListener('change', setDisplayName);
+
 document.querySelector('.edit-bookmark').addEventListener('click', saveEdit);
 document.querySelector('.close-modal').addEventListener('click', closeModal);
 document.querySelector('.close-edit-modal').addEventListener('click', closeEditModal);
