@@ -13,7 +13,7 @@ function validateURL(string) {
 function getFavicon(str){
   const escapedStr = escapedHTML(str);
   if (validateURL(escapedStr)) {
-    return `http://www.google.com/s2/favicons?domain=${escapedStr}`
+    return `https://www.google.com/s2/favicons?domain=${escapedStr}`
   } else {
     return ''
   }
