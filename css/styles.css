@@ -99,3 +99,14 @@ hr {
   content: "\2022";
   font-size: 22px;
 }
+
+.ellipsis{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.display-name{
+  width: 80%;
+}

@@ -1,4 +1,13 @@
-function validateURL(string) {
+function isValidUrl(string) {
+  try {
+    new URL(string);
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function isPublicUrl(string){
   try {
     const url = new URL(string);
     if (url.protocol === 'file:') {
@@ -12,7 +21,7 @@ function validateURL(string) {
 
 function getFavicon(str){
   const escapedStr = escapedHTML(str);
-  if (validateURL(escapedStr)) {
+  if (isPublicUrl(escapedStr)) {
     return `https://www.google.com/s2/favicons?domain=${escapedStr}`
   } else {
     return ''
@@ -24,20 +33,22 @@ function escapedHTML(str) {
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
+            .replace(/'/g, '&#039;')
+            .replace(/ /g, '&nbsp;')
+            .replace(/　/g, '&#12288;');
 }
 
 function safeURL(str){
   // HTMLエスケープ
   const escaped = escapedHTML(str);
-  if (!validateURL(escaped)) { return escaped }
+  if (!isValidUrl(escaped)) { return escaped }
 
   // URLエンコード
   return encodeURI(escaped);
 }
 
 function extractSiteName(url) {
-  if (!validateURL(url)) { return ''; }
+  if (!isValidUrl(url)) { return ''; }
 
   const parser = new URL(url);
   let hostname = parser.hostname.split('.');

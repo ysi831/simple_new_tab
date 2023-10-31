@@ -94,6 +94,7 @@ const app = {
             const columnIndex = parseInt(evt.from.id.split('-')[1]);
             updateColumnsData(columnIndex);
             saveState();
+            app.render();
           }
         });
       }
@@ -134,12 +135,18 @@ const app = {
     const columnTemplates = app.data.columns.map((column, columnIndex) => {
       const items = column.map((item, itemIndex) => {
         if (!item) { return; }
+
+        const link =
+          (isValidUrl(item.url))
+            ? `<a class="ellipsis" href="${safeURL(item.url)}" rel="noopener noreferrer">${escapedHTML(item.name)}</a>`
+            : `<span class="ellipsis">${escapedHTML(item.name)}</span>`;
+
         if (item.type === 'bookmark') {
           return `
             <li data-name=${escapedHTML(item.name)} data-url=${safeURL(item.url)} data-type='bookmark'>
-              <div class="is-pulled-left is-flex is-align-items-center">
+              <div class="is-pulled-left is-flex is-align-items-center display-name">
                 <img class='mr-1' src="${getFavicon(item.url)}">
-                <a href="${safeURL(item.url)}" rel="noopener noreferrer">${escapedHTML(item.name)}</a>
+                ${link}
               </div>
               <div class="is-pulled-right is-flex is-align-items-center">
                 <button
@@ -230,6 +237,8 @@ const app = {
 
     sortable();
     saveState();
+
+    toggleButtons();
   }
 };
 
