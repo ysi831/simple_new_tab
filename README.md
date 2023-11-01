@@ -35,6 +35,3 @@ node server.js
 - Fontawsome
 - Sortable
 - Service Worker (faviconのキャッシュ)
-
-## その他
-- ユーザーの情報を収集・閲覧することは一切ありません。
