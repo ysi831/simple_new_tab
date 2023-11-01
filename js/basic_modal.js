@@ -82,10 +82,6 @@ const settingsModal = {
             <h2 id="起動時にも開く設定"><a class="anchor" name="起動時にも開く設定" href="#起動時にも開く設定"><span class="octicon octicon-link"></span></a>起動時にも開く設定</h2>
             <p>Chromeの設定から、「起動時」→「新しいタブページを開く」にすることで起動にもこの拡張機能のページを開くことができます。</p>
 
-            <br>
-            <h2 id="その他"><a class="anchor" name="その他" href="#その他"><span class="octicon octicon-link"></span></a>その他</h2>
-            <p class="bullet-point">ユーザーの情報を収集・閲覧することは一切ありません。</p>
-
           </section>
           <footer class="modal-card-foot license">
             Copyright <a href="https://www.mpo-gg.com">© mpo-gg.com</a>
