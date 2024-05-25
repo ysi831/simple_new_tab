@@ -82,6 +82,32 @@ const settingsModal = {
             <h2 id="起動時にも開く設定"><a class="anchor" name="起動時にも開く設定" href="#起動時にも開く設定"><span class="octicon octicon-link"></span></a>起動時にも開く設定</h2>
             <p>Chromeの設定から、「起動時」→「新しいタブページを開く」にすることで起動にもこの拡張機能のページを開くことができます。</p>
 
+            <br>
+            <h2 id="インポート・エクスポート"><a class="anchor" name="インポート・エクスポート" href="#インポート・エクスポート"><span class="octicon octicon-link"></span></a>インポート・エクスポート</h2>
+            <p>別の端末に移行することができます。</p>
+            <br>
+            <div class="columns">
+              <div class="column is-narrow is-4">
+                <button class="button is-info btn-import">インポート</button>
+              </div>
+              <div class="column">
+                <span>設定をJSONから読み込む</span>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-narrow is-4">
+                <button class="button is-info btn-export">エクスポート</button>
+              </div>
+              <div class="column">
+                <span>設定をJSONとして出力する</span>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-12">
+                <b>JSON表示</b>
+                <textarea class="columns-json textarea" placeholder="ここにJSONが表示されます"></textarea>
+              </div>
+            </div>
           </section>
           <footer class="modal-card-foot license">
             Copyright <a href="https://www.mpo-gg.com">© mpo-gg.com</a>

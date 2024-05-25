@@ -129,7 +129,18 @@ const app = {
 
       app.data.locked = isChecked;
       if (event) { saveState(); }
-    }
+    },
+    exportColumns() {
+      const columnsData = JSON.stringify(app.data.columns);
+      document.querySelector('.columns-json').value = columnsData;
+    },
+    importColumns() {
+      const columnsData = document.querySelector('.columns-json').value;
+      if (columnsData) {
+        app.data.columns = JSON.parse(columnsData);
+        app.render();
+      }
+    },
   },
   render() {
     const columnTemplates = app.data.columns.map((column, columnIndex) => {
@@ -254,5 +265,7 @@ document.querySelector('.close-modal').addEventListener('click', closeModal);
 document.querySelector('.close-edit-modal').addEventListener('click', closeEditModal);
 document.querySelector('.cancel-add').addEventListener('click', closeModal);
 document.querySelector('.cancel-edit').addEventListener('click', closeEditModal);
+document.querySelector('.btn-import').addEventListener('click', importColumns);
+document.querySelector('.btn-export').addEventListener('click', exportColumns);
 
 toggleButtons(true);
