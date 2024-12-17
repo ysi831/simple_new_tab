@@ -20,12 +20,14 @@ const settingsModal = {
           <section class="modal-card-body">
 
             <h2>このアプリについて</h2>
-            <p><b>Bookmarker Web</b>は、Web上でブックマークを管理できるミニツールです</p>
+            <p><b>Bookmarker Web</b>は、ブックマークを管理できるWebツールです。</p>
             <br>
             <p class="bullet-point">3カラムでのブックマークの登録、区切り線の追加、ドラッグドロップによる入れ替えができます。</p>
             <p class="bullet-point">Chromeのブックマークとは連携しないため、独自のブックマークを自分で登録して使うことができます。</p>
             <p class="bullet-point">登録後、右上の錠前のチェックを入れると余計なボタンが表示されなくなります。</p>
             <p class="bullet-point">アイコンは自動で取得されます。</p>
+            <br>
+            <p>※このアプリは試験公開中であり、これから変わることも、変わらないこともありえます。</p>
 
             <br>
             <h2 id="使い方"><a class="anchor" name="使い方" href="#使い方"><span class="octicon octicon-link"></span></a>使い方</h2>
@@ -104,10 +106,18 @@ const settingsModal = {
             </div>
             <div class="columns">
               <div class="column is-12">
-                <b>JSON表示</b>
-                <textarea class="columns-json textarea" placeholder="ここにJSONが表示されます"></textarea>
+                <b>JSON</b>
+                <textarea class="columns-json textarea" placeholder="エクスポートの際、ここにJSONが表示されます。\nインポートの際、ここにJSONを貼り付けてください。"></textarea>
               </div>
             </div>
+
+            <br>
+            <hr>
+            <br>
+            <p>
+              更新履歴：<br>
+              2024/12/17　デザインの微調整、ダークモード追加
+            </p>
           </section>
           <footer class="modal-card-foot license">
             Copyright <a href="https://www.mpo-gg.com">© mpo-gg.com</a>

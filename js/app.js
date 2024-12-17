@@ -141,6 +141,24 @@ const app = {
         app.render();
       }
     },
+    initDarkmode() {
+      const options = {
+        bottom: '64px', // default: '32px'
+        right: '32px', // default: '32px'
+        left: 'unset', // default: 'unset'
+        time: '0.5s', // default: '0.3s'
+        mixColor: '#fff', // default: '#fff'
+        backgroundColor: '#fff',  // default: '#fff'
+        buttonColorDark: '#333',  // default: '#100f2c'
+        buttonColorLight: '#fff', // default: '#fff'
+        saveInCookies: true, // default: true,
+        label: '🌓', // default: ''
+        autoMatchOsTheme: true // default: true
+      }
+
+      const darkmode = new Darkmode(options);
+      darkmode.showWidget();
+    }
   },
   render() {
     const columnTemplates = app.data.columns.map((column, columnIndex) => {
@@ -156,7 +174,7 @@ const app = {
           return `
             <li data-name=${escapedHTML(item.name)} data-url=${safeURL(item.url)} data-type='bookmark'>
               <div class="is-pulled-left is-flex is-align-items-center display-name">
-                <img class='mr-1' src="${getFavicon(item.url)}">
+                <img class='mr-1 darkmode-ignore' src="${getFavicon(item.url)}">
                 ${link}
               </div>
               <div class="is-pulled-right is-flex is-align-items-center">
@@ -202,7 +220,7 @@ const app = {
     }).join('');
 
     const template = `
-      <div class="column">
+      <div class="column header">
         <div class="level">
           <div class="level-left">
             Bookmarker Web
@@ -269,3 +287,5 @@ document.querySelector('.btn-import').addEventListener('click', importColumns);
 document.querySelector('.btn-export').addEventListener('click', exportColumns);
 
 toggleButtons(true);
+
+initDarkmode();

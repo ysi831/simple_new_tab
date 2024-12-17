@@ -3,6 +3,8 @@ body {
   padding: 0;
   font-size: 22px;
   line-height: 1.5;
+  color: #333;
+  background-color: #ccc !important;
 }
 h1, h2, h3, h4 {
   font-weight: bold;
@@ -49,7 +51,8 @@ h4 {
 
 #app{
   width: 100%;
-  height: 100%;
+  height: calc(100% - 58px);
+  min-height: calc(100% - 58px);
   margin: 0;
   padding: 0;
   position: absolute;
@@ -59,8 +62,11 @@ h4 {
 .container{
   height: 100%;
   padding-top: 40px;
-  background-color: #f3f4f6;
 }
+.header{
+  background-color: #f3f4f6 !important;
+}
+
 .bordered-column {
   border: 1px solid #e5e5e5;
 }
@@ -109,4 +115,22 @@ hr {
 
 .display-name{
   width: 80%;
+}
+
+.darkmode--activated .container {
+  background-color: #ccc;
+}
+
+.darkmode-background {
+  background: #ddd !important;
+}
+.darkmode-layer, .darkmode-toggle {
+  z-index: 10;
+}
+
+.darkmode--activated .is-danger,
+.darkmode--activated .is-info,
+.darkmode--activated .timer-slider-wrap,
+.darkmode--activated img.darkmode-ignore{
+  mix-blend-mode: exclusion !important;
 }
